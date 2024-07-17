@@ -41,12 +41,13 @@ body > header {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 0 60px;
+    padding: 0;
     display: flex;
     flex-direction: column;
     transform: translatex(-100%);
     transition: transform 0.4s ease-in-out;
-    border-radius: 25px;
+    border-radius: 0 0 25px 0;
+    box-shadow: 0 0 20px 20px rgba(0,0,0,0.1);
 }
     
 .sidebar__close {
@@ -57,13 +58,13 @@ body > header {
       height: 60px;
       width: 60px;
       border-radius: 50%;
-      box-shadow: 0 0 20px 20px rgba(0,0,0,0.03);
       display: flex;
       justify-content: center;
       align-items: center;
       transform: translatex(-100%);
       cursor: pointer;
       transition: transform 0.4s ease-in-out 0.2s;
+      z-index: -1;
 }
       
 .sidebar::before, 
@@ -85,8 +86,18 @@ body > header {
 }
 
 .menu-control {
-    display: none;
+    position: relative;
+    left: 25px;
+    top: 25px;
     z-index: 2;
+    opacity: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.menu-control:checked {
+    left: 170px;
+    top: 110px;
 }
 
 .menu-control:checked + .sidebar {
@@ -98,7 +109,7 @@ body > header {
 }
 
 .menu-control:checked + .sidebar::before, .menu-control:checked + .sidebar::after {
-    right: -13px;
+    right: -20px;
 }
       
 .menu-control + .sidebar .sidebar__close {
@@ -111,40 +122,73 @@ body > header {
 }
 
 #m_nav li {
-    margin-bottom: 5px;
     list-style-type: none;
 }
 
 #m_nav li > button {
     color: #620175;
-    border: none;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: .5px solid #e2e092;
     background: none;
+    width: 100%;
+    padding: 5px;
+}
+
+#m_nav li:first-child > button {
+    color: #620175;
+    border-bottom: .5px solid #e2e092;
+    background: none;
+    width: 100%;
+    padding: 5px;
+}
+
+#m_nav li:last-child > button {
+    color: #620175;
+    border-bottom: 0px;
+    background: none;
+    width: 100%;
+    padding: 5px;
 }
 
 main {
-    margin-top: 2em;
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     width: 100%;
     justify-content: center;
+    z-index: -1;
 }
 
 .start {
     margin-top: 150px;
     border-radius: 15px;
-    width: 80%;
+    width: 80vw;
     background-color: #fffed7;
     padding: 20px;
+    display: block;
+    max-width: calc(80vw - 40px);
+    z-index: 0;
 }
 
 .start > div {
-    display: flex;
+    padding: none;
+    z-index: 0;
 }
 
 .start > div > img {
     width: 100px;
     height: 150px;
-    margin-right: 2em;
     padding: 1em;
+}
+.start > div > h1 {
+    font-size: medium;
+}
+
+.start > p {
+    font-size: small;
 }
 
 .project_section {

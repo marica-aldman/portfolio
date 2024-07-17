@@ -16,7 +16,7 @@
     </head>
 
 
-<label?php
+<?php
 
 // top nav
 
