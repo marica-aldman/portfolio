@@ -202,6 +202,7 @@ body > main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: stretch;
 }
 
 .showing_section {
@@ -213,25 +214,21 @@ body > main {
 }
 
 .all > header {
-    width: 150px;
     padding: 10px;
 }
 
 .all > header img {
     width: 280px;
-    height: 150px;
     margin: 0px;
 }
 
 .all > main {
-    width: 150px;
     margin: 0px;
     display: block;
     padding: 0px;
 }
 
 .all > main > h1 {
-    width: 150px;
     font-size: large;
     padding-left: 0.5em;
     margin: 0px;
@@ -352,10 +349,6 @@ footer > div > div {
         justify-content: center;
         min-height: calc(100vh-3em);
     }
-    
-    .all {
-        height: 300px;
-    }
 
     .start > p {
         font-size: medium;
@@ -372,4 +365,9 @@ footer > div > div {
         display: grid;
         column-gap: 3em;
     } 
+
+    
+    .all:last-child {
+        margin-bottom: 1em;
+    }
 }

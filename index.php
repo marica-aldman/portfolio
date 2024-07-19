@@ -183,7 +183,7 @@ $all_projects = array($proj1, $proj2, $proj3, $proj4, $proj5, $proj6);
 for($i=0; $i<count($all_projects); $i++) {
     print "<div id='" . $all_projects[$i]["id"] . "' class='" . $all_projects[$i]["class"] ."'>";
     print "<header> <img src='img/" . $all_projects[$i]["img"] . "' > </header>";
-    print "<main> <h1>" . $all_projects[$i]["title"] . "</h1> <div>Description: "  . $all_projects[$i]["description"] . "</div>";
+    print "<main> <h1>" . $all_projects[$i]["title"] . "</h1> <div><div>Description:</div><div>"  . $all_projects[$i]["description"] . "</div></div>";
     if($all_projects[$i]["git"] != ""){
         print "<div><a href=''"  . $all_projects[$i]["git"] . ">Git link</a></div>";
     }
