@@ -126,13 +126,17 @@ body > header {
     font-size: medium;
 }
 
-#m_nav li {
-    list-style-type: none;
+
+.darkBG {
+    background-color: #afad75;
+}
+
+.lightBG {
     background-color: #fffed7;
 }
 
-#m_nav li:first-child {
-    background-color: #afad75;
+#m_nav li {
+    list-style-type: none;
 }
 
 #m_nav li > button {
@@ -298,7 +302,6 @@ footer > div > div {
         top: 0;
         z-index: 2;
         display: flex;
-        background-color: #fffed7;
         width: 100%;
         box-shadow: 0 0 20px 20px rgba(255, 254, 215, 0.2);
     }
@@ -314,7 +317,6 @@ footer > div > div {
     
     .d_nav li:first-child {
         border-left: 0px;
-        background-color: #afad75;
     }
 
     .d_nav li:hover {

@@ -34,24 +34,24 @@
 
                 <aside class="sidebar">
                     <nav id="m_nav">
-                        <li class="navListElement"><button class="navButtonElement" onclick="menu_choice('start')">Start</button></li>
-                        <li class="navListElement"><button class="navButtonElement" onclick="menu_choice('all')">All projects</button></li>
-                        <li class="navListElement"><button class="navButtonElement" onclick="menu_choice('live')">Live Websites</button></li>
-                        <li class="navListElement"><button class="navButtonElement" onclick="menu_choice('FE')">Front End examples</button></li>
-                        <li class="navListElement"><button class="navButtonElement" onclick="menu_choice('JS')">JS framework examples</button></li>
-                        <li class="navListElement"><button class="navButtonElement" onclick="menu_choice('other')">Other coding projects</button></li>
+                        <li class="navListElement darkBG"><button class="navButtonElement" onclick="menu_choice('start')">Start</button></li>
+                        <li class="navListElement lightBG"><button class="navButtonElement" onclick="menu_choice('all')">All projects</button></li>
+                        <li class="navListElement lightBG"><button class="navButtonElement" onclick="menu_choice('live')">Live Websites</button></li>
+                        <li class="navListElement lightBG"><button class="navButtonElement" onclick="menu_choice('FE')">Front End examples</button></li>
+                        <li class="navListElement lightBG"><button class="navButtonElement" onclick="menu_choice('JS')">JS framework examples</button></li>
+                        <li class="navListElement lightBG"><button class="navButtonElement" onclick="menu_choice('other')">Other coding projects</button></li>
                     </nav>
 
                     <label for="menu-control" class="sidebar__close"></label>
                 </aside>
             </div>
             <nav class="d_nav">
-                <li class="navListElement"><button class="navButtonElement" onclick="menu_choice('start')">Start</button></li>
-                <li class="navListElement"><button class="navButtonElement" onclick="menu_choice('all')">All projects</button></li>
-                <li class="navListElement"><button class="navButtonElement" onclick="menu_choice('live')">Live Websites</button></li>
-                <li class="navListElement"><button class="navButtonElement" onclick="menu_choice('FE')">Front End examples</button></li>
-                <li class="navListElement"><button class="navButtonElement" onclick="menu_choice('JS')">JS framework examples</button></li>
-                <li class="navListElement"><button class="navButtonElement" onclick="menu_choice('other')">Other coding projects</button></li>
+                <li class="navListElement darkBG"><button class="navButtonElement" onclick="menu_choice('start')">Start</button></li>
+                <li class="navListElement lightBG"><button class="navButtonElement" onclick="menu_choice('all')">All projects</button></li>
+                <li class="navListElement lightBG"><button class="navButtonElement" onclick="menu_choice('live')">Live Websites</button></li>
+                <li class="navListElement lightBG"><button class="navButtonElement" onclick="menu_choice('FE')">Front End examples</button></li>
+                <li class="navListElement lightBG"><button class="navButtonElement" onclick="menu_choice('JS')">JS framework examples</button></li>
+                <li class="navListElement lightBG"><button class="navButtonElement" onclick="menu_choice('other')">Other coding projects</button></li>
             </nav>
         </header>
 
@@ -68,20 +68,27 @@
                     for(let j=0; j < navigationSections.length; j++){
                         if(navigationSections[j].classList.contains("darkBG")) {
                             navigationSections[j].classList.remove("darkBG");
+                            navigationSections[j].classList.add("lightBG");
                         }
 
                         if(choice == "start" && j == 0 || choice == "start" && j == 6 ) {
                             navigationSections[j].classList.add("darkBG");
+                            navigationSections[j].classList.remove("lightBG");
                         } else if(choice == "all" && j == 1 || choice == "all" && j == 7 ) {
                             navigationSections[j].classList.add("darkBG");
+                            navigationSections[j].classList.remove("lightBG");
                         } else if(choice == "live" && j == 2 || choice == "live" && j == 8 ) {
                             navigationSections[j].classList.add("darkBG");
-                        } else if(choice == "live" && j == 3 || choice == "start" && j == 9 ) {
+                            navigationSections[j].classList.remove("lightBG");
+                        } else if(choice == "FE" && j == 3 || choice == "FE" && j == 9 ) {
                             navigationSections[j].classList.add("darkBG");
-                        } else if(choice == "live" && j == 4 || choice == "start" && j == 10 ) {
+                            navigationSections[j].classList.remove("lightBG");
+                        } else if(choice == "JS" && j == 4 || choice == "JS" && j == 10 ) {
                             navigationSections[j].classList.add("darkBG");
-                        } else if(choice == "live" && j == 5 || choice == "start" && j == 11 ) {
+                            navigationSections[j].classList.remove("lightBG");
+                        } else if(choice == "other" && j == 5 || choice == "other" && j == 11 ) {
                             navigationSections[j].classList.add("darkBG");
+                            navigationSections[j].classList.remove("lightBG");
                         }
                     }
 
@@ -164,16 +171,18 @@
 
 // use an array for now and then maybe a cms or database
 
-$proj1 = array("id"=>"prj1", "img"=>"proj1.png", "title"=>"Project 1", "description"=>"desc proj1", "git"=>"", "live"=>"live link", "class"=>"all live hide_project");
-$proj2 = array("id"=>"prj2", "img"=>"proj2.png", "title"=>"Project 2", "description"=>"desc proj2", "git"=>"gitlink", "live"=>"", "class"=>"all FE hide_project");
-$proj3 = array("id"=>"prj3", "img"=>"proj3.png", "title"=>"Project 3", "description"=>"desc proj3", "git"=>"gitlink", "live"=>"", "class"=>"all JS hide_project");
-$proj4 = array("id"=>"prj4", "img"=>"proj4.png", "title"=>"Project 4", "description"=>"desc proj4", "git"=>"gitlink", "live"=>"", "class"=>"all other hide_project");
+$proj1 = array("id"=>"badkartan", "img"=>"badiuppsalase.png", "title"=>"Bad i Uppsala", "description"=>"Participated in this project at Initcia in Uppsala. Wordpress project with Divi as the theme.", "git"=>"", "live"=>"https://badiuppsala.se/", "class"=>"all live hide_project");
+$proj2 = array("id"=>"kfp", "img"=>"knutbyfolketspark.png", "title"=>"Knutby Folkets park", "description"=>"Main developer for this project. Made in wordpress 2020 in accordance with specifications from the client.", "git"=>"", "live"=>"https://www.knutbyfolketspark.com/", "class"=>"all live hide_project");
+$proj3 = array("id"=>"prj1", "img"=>"proj1.png", "title"=>"Project 1", "description"=>"desc proj1", "git"=>"", "live"=>"live link", "class"=>"all live hide_project");
+$proj4 = array("id"=>"prj2", "img"=>"proj2.png", "title"=>"Project 2", "description"=>"desc proj2", "git"=>"gitlink", "live"=>"", "class"=>"all FE hide_project");
+$proj5 = array("id"=>"prj3", "img"=>"proj3.png", "title"=>"Project 3", "description"=>"desc proj3", "git"=>"gitlink", "live"=>"", "class"=>"all JS hide_project");
+$proj6 = array("id"=>"prj4", "img"=>"proj4.png", "title"=>"Project 4", "description"=>"desc proj4", "git"=>"gitlink", "live"=>"", "class"=>"all other hide_project");
 
-$all_projects = array($proj1, $proj2, $proj3, $proj4);
+$all_projects = array($proj1, $proj2, $proj3, $proj4, $proj5, $proj6);
 
 for($i=0; $i<count($all_projects); $i++) {
     print "<div id='" . $all_projects[$i]["id"] . "' class='" . $all_projects[$i]["class"] ."'>";
-    print "<header> <img src='" . $all_projects[$i]["img"] . "' > </header>";
+    print "<header> <img src='img/" . $all_projects[$i]["img"] . "' > </header>";
     print "<main> <h1>" . $all_projects[$i]["title"] . "</h1> <div>Description: "  . $all_projects[$i]["description"] . "</div>";
     if($all_projects[$i]["git"] != ""){
         print "<div><a href=''"  . $all_projects[$i]["git"] . ">Git link</a></div>";
